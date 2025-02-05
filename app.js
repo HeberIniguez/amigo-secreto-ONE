@@ -39,6 +39,12 @@ function agregarAmigo(){
 //Selecciona un nombre aleatorio y lo muestra en la lista.
 function sortearAmigo(){
     let li = document.createElement("li");
+
+    if(amigos.length==0){
+        alert('No tienes agregado ningún amigo, intenta agregando algunos.');
+        insertarAmigo.focus();
+    }
+
     limpiarLista();
     li.textContent = amigos[Math.floor(Math.random()*amigos.length)];
     listaResultado.appendChild(li);
